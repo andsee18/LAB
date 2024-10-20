@@ -1,25 +1,22 @@
-package Lab1;
-public static void main(String[] args) {
+public class Main {
+    public static void main(String[] args) {
+        Car car1 = new Car("Toyota", "Corolla", 2020, 4);
+        Car car2 = new Car("Honda", "Civic", 2019, 4);
+        Truck truck = new Truck("Volvo", "FH16", 2021, 50000);
+        Motorcycle motorcycle = new Motorcycle("Harley-Davidson", "Sportster", 2022, false);
 
-        for (int i = 0; i < args.length; i++) {
-            String word = args[i];
-            boolean temp = isPalindrome(word);
+        System.out.println(car1);
+        System.out.println(car2);
+        System.out.println(truck);
+        System.out.println(motorcycle);
 
-            System.out.println(temp);
-        }
+        car1.start();
+        car1.stop();
+        truck.start();
+        truck.stop();
+        motorcycle.start();
+        motorcycle.stop();
 
-    }
-
-    public static String reverseString(String str) {
-        String s = "";
-        for (int i = str.length(); i > 0; i--) {
-            s += str.charAt(i - 1);
-        }
-        return s;
-    }
-
-    public static boolean isPalindrome(String str) {
-        String s2 = reverseString(str);
-        return s2.equals(str);
+        System.out.println("Total cars created: " + Car.getCarCount());
     }
 }
